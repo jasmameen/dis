@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/dis/',
+  base: process.env.NODE_ENV === 'production' ? '/dis/' : '/',
   plugins: [react()],
   server: {
     port: 5173,
