@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, ThemeProvider, useAuth } from './context/AuthContext';
 import AdminRoute from './components/AdminRoute';
 import Layout from './components/Layout';
@@ -23,7 +23,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <HashRouter>
+        <BrowserRouter>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterTeacherPage />} />
@@ -38,7 +38,7 @@ export default function App() {
               <Route path="admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
             </Route>
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </AuthProvider>
     </ThemeProvider>
   );
